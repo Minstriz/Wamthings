@@ -1,0 +1,295 @@
+2025-05-08 14:17:40,184 - __main__ - INFO - Created new log file: attendance_log.csv
+2025-05-08 14:17:40,186 - __main__ - INFO - Created new JSON file: attendance_data.json
+2025-05-08 14:17:40,760 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:17:41,020 - __main__ - INFO - Added face target: A
+2025-05-08 14:17:41,251 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:17:41,251 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:17:41,359 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-08 14:17:41,359 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-08 14:17:41,359 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:17:44,382 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:17:44,721 - __main__ - INFO - Added face target: A
+2025-05-08 14:17:44,986 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:17:44,986 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:17:45,009 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:17:45,029 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:17:48,286 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:48] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-08 14:17:48,311 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:48] "GET /login HTTP/1.1" 200 -
+2025-05-08 14:17:49,572 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-08 14:17:54,702 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:54] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-05-08 14:17:54,732 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:54] "GET /index HTTP/1.1" 200 -
+2025-05-08 14:17:54,733 - werkzeug - INFO -  * Detected change in 'C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\\Lib\\encodings\\unicode_escape.py', reloading
+2025-05-08 14:17:54,926 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:54] "[33mGET /cdn-cgi/challenge-platform/scripts/jsd/main.js HTTP/1.1[0m" 404 -
+2025-05-08 14:17:55,407 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:17:58,484 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:17:58,681 - __main__ - INFO - Added face target: A
+2025-05-08 14:17:58,897 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:17:58,897 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:17:58,914 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:17:58,926 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:17:59,040 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:59] "HEAD /video_feed?action=checkin&nocache=1746688676640 HTTP/1.1" 200 -
+2025-05-08 14:17:59,051 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:17:59,491 - __main__ - ERROR - Error in generate_frames: name 'time' is not defined
+2025-05-08 14:17:59,513 - __main__ - INFO - Camera released
+2025-05-08 14:17:59,513 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:17:59,515 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:59] "[32mPOST /checkin HTTP/1.1[0m" 302 -
+2025-05-08 14:17:59,531 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:59] "GET /index HTTP/1.1" 200 -
+2025-05-08 14:17:59,618 - __main__ - ERROR - Error in generate_frames: name 'time' is not defined
+2025-05-08 14:17:59,622 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:17:59] "GET /video_feed?action=checkin&nocache=1746688679044 HTTP/1.1" 200 -
+2025-05-08 14:17:59,626 - __main__ - INFO - Camera released
+2025-05-08 14:18:21,441 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:18:21] "HEAD /video_feed?action=checkin&nocache=1746688701432 HTTP/1.1" 200 -
+2025-05-08 14:18:21,451 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:18:21,683 - __main__ - ERROR - Error in generate_frames: name 'time' is not defined
+2025-05-08 14:18:21,704 - __main__ - INFO - Camera released
+2025-05-08 14:18:21,704 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:18:21,706 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:18:21] "[32mPOST /checkin HTTP/1.1[0m" 302 -
+2025-05-08 14:18:21,715 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:18:21] "GET /index HTTP/1.1" 200 -
+2025-05-08 14:18:21,812 - __main__ - ERROR - Error in generate_frames: name 'time' is not defined
+2025-05-08 14:18:21,816 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:18:21] "GET /video_feed?action=checkin&nocache=1746688701444 HTTP/1.1" 200 -
+2025-05-08 14:18:21,824 - __main__ - INFO - Camera released
+2025-05-08 14:18:32,661 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:18:32] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-08 14:20:35,261 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:20:35,264 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:20:36,752 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:20:40,093 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:20:40,329 - __main__ - INFO - Added face target: A
+2025-05-08 14:20:40,589 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:20:40,589 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:20:40,611 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:20:40,627 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:20:51,565 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:20:51,570 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:20:52,311 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:20:55,507 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:20:55,701 - __main__ - INFO - Added face target: A
+2025-05-08 14:20:55,902 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:20:55,903 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:20:55,920 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:20:55,934 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:20:56,549 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:20:56,549 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:20:56,550 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:20:57,524 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:21:00,637 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:21:00,899 - __main__ - INFO - Added face target: A
+2025-05-08 14:21:01,178 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:21:01,179 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:21:01,196 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:21:01,209 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:21:27,924 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\def_sheet_tele.py', reloading
+2025-05-08 14:21:27,926 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\def_sheet_tele.py', reloading
+2025-05-08 14:21:28,284 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:21:31,491 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:21:31,704 - __main__ - INFO - Added face target: A
+2025-05-08 14:21:31,934 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:21:31,934 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:21:31,950 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:21:31,963 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:21:35,035 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\def_sheet_tele.py', reloading
+2025-05-08 14:21:35,036 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\def_sheet_tele.py', reloading
+2025-05-08 14:21:35,768 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:21:38,810 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:21:39,040 - __main__ - INFO - Added face target: A
+2025-05-08 14:21:39,270 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:21:39,271 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:21:39,287 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:21:39,299 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:21:56,825 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:21:56,829 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:21:56,834 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:21:57,611 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:22:00,859 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:22:01,056 - __main__ - INFO - Added face target: A
+2025-05-08 14:22:01,244 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:22:01,245 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:22:01,261 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:22:01,273 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:22:21,071 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:22:21,081 - werkzeug - INFO -  * Detected change in 'D:\\dev\\wam\\face-reidentification-main\\face-reidentification-main\\app_final.py', reloading
+2025-05-08 14:22:21,687 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:22:24,925 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:22:25,191 - __main__ - INFO - Added face target: A
+2025-05-08 14:22:25,474 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:22:25,474 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:22:25,496 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:22:25,510 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:22:32,753 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:22:32] "HEAD /video_feed?action=checkin&nocache=1746688952744 HTTP/1.1" 200 -
+2025-05-08 14:22:32,767 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:22:33,257 - __main__ - INFO - Sending frame, size: 7147 bytes
+2025-05-08 14:22:33,266 - __main__ - INFO - Camera released
+2025-05-08 14:22:33,266 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:22:33,267 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:22:33] "[32mPOST /checkin HTTP/1.1[0m" 302 -
+2025-05-08 14:22:33,286 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:22:33] "GET /index HTTP/1.1" 200 -
+2025-05-08 14:22:33,465 - __main__ - INFO - Sending frame, size: 7138 bytes
+2025-05-08 14:22:33,466 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:22:33] "GET /video_feed?action=checkin&nocache=1746688952758 HTTP/1.1" 200 -
+2025-05-08 14:22:33,677 - __main__ - INFO - Sending frame, size: 7517 bytes
+2025-05-08 14:22:33,713 - __main__ - INFO - Sending frame, size: 7065 bytes
+2025-05-08 14:22:33,747 - __main__ - INFO - Sending frame, size: 7093 bytes
+2025-05-08 14:22:33,784 - __main__ - INFO - Sending frame, size: 7060 bytes
+2025-05-08 14:22:33,819 - __main__ - INFO - Sending frame, size: 7048 bytes
+2025-05-08 14:22:33,854 - __main__ - INFO - Sending frame, size: 7009 bytes
+2025-05-08 14:22:33,888 - __main__ - INFO - Sending frame, size: 6994 bytes
+2025-05-08 14:22:33,924 - __main__ - INFO - Sending frame, size: 7042 bytes
+2025-05-08 14:22:33,959 - __main__ - INFO - Sending frame, size: 7049 bytes
+2025-05-08 14:22:34,000 - __main__ - INFO - Sending frame, size: 7151 bytes
+2025-05-08 14:22:34,049 - __main__ - INFO - Sending frame, size: 7161 bytes
+2025-05-08 14:22:34,084 - __main__ - INFO - Sending frame, size: 7197 bytes
+2025-05-08 14:22:34,126 - __main__ - INFO - Sending frame, size: 7201 bytes
+2025-05-08 14:22:34,172 - __main__ - INFO - Sending frame, size: 7204 bytes
+2025-05-08 14:22:34,207 - __main__ - INFO - Sending frame, size: 7206 bytes
+2025-05-08 14:22:34,250 - __main__ - INFO - Sending frame, size: 7203 bytes
+2025-05-08 14:22:34,298 - __main__ - INFO - Sending frame, size: 7161 bytes
+2025-05-08 14:22:34,333 - __main__ - INFO - Sending frame, size: 7161 bytes
+2025-05-08 14:22:34,377 - __main__ - INFO - Sending frame, size: 7184 bytes
+2025-05-08 14:22:34,424 - __main__ - INFO - Sending frame, size: 7155 bytes
+2025-05-08 14:22:34,459 - __main__ - INFO - Sending frame, size: 7135 bytes
+2025-05-08 14:22:34,502 - __main__ - INFO - Sending frame, size: 7135 bytes
+2025-05-08 14:22:34,548 - __main__ - INFO - Sending frame, size: 7127 bytes
+2025-05-08 14:22:34,583 - __main__ - INFO - Sending frame, size: 7134 bytes
+2025-05-08 14:22:34,625 - __main__ - INFO - Sending frame, size: 7138 bytes
+2025-05-08 14:22:34,671 - __main__ - INFO - Sending frame, size: 7078 bytes
+2025-05-08 14:22:34,706 - __main__ - INFO - Sending frame, size: 7085 bytes
+2025-05-08 14:22:34,751 - __main__ - INFO - Sending frame, size: 7128 bytes
+2025-05-08 14:22:34,796 - __main__ - INFO - Sending frame, size: 7122 bytes
+2025-05-08 14:22:34,832 - __main__ - INFO - Sending frame, size: 7105 bytes
+2025-05-08 14:22:34,876 - __main__ - INFO - Sending frame, size: 7115 bytes
+2025-05-08 14:22:34,923 - __main__ - INFO - Sending frame, size: 7126 bytes
+2025-05-08 14:22:34,959 - __main__ - INFO - Sending frame, size: 7120 bytes
+2025-05-08 14:22:35,003 - __main__ - INFO - Sending frame, size: 7120 bytes
+2025-05-08 14:22:35,036 - __main__ - INFO - Sending frame, size: 7135 bytes
+2025-05-08 14:22:35,081 - __main__ - INFO - Sending frame, size: 7121 bytes
+2025-05-08 14:22:35,127 - __main__ - INFO - Sending frame, size: 7091 bytes
+2025-05-08 14:22:35,175 - __main__ - INFO - Sending frame, size: 7086 bytes
+2025-05-08 14:22:35,209 - __main__ - INFO - Sending frame, size: 7104 bytes
+2025-05-08 14:22:35,252 - __main__ - INFO - Sending frame, size: 7096 bytes
+2025-05-08 14:22:35,300 - __main__ - INFO - Sending frame, size: 7109 bytes
+2025-05-08 14:22:35,335 - __main__ - INFO - Sending frame, size: 7115 bytes
+2025-05-08 14:22:35,376 - __main__ - INFO - Sending frame, size: 7111 bytes
+2025-05-08 14:22:35,421 - __main__ - INFO - Sending frame, size: 7120 bytes
+2025-05-08 14:22:35,457 - __main__ - INFO - Sending frame, size: 7110 bytes
+2025-05-08 14:22:35,500 - __main__ - INFO - Sending frame, size: 7128 bytes
+2025-05-08 14:22:35,545 - __main__ - INFO - Sending frame, size: 7080 bytes
+2025-05-08 14:22:35,580 - __main__ - INFO - Sending frame, size: 7062 bytes
+2025-05-08 14:22:35,626 - __main__ - INFO - Sending frame, size: 7065 bytes
+2025-05-08 14:22:35,672 - __main__ - INFO - Sending frame, size: 7016 bytes
+2025-05-08 14:22:35,708 - __main__ - INFO - Sending frame, size: 7030 bytes
+2025-05-08 14:22:35,746 - __main__ - INFO - Sending frame, size: 7002 bytes
+2025-05-08 14:22:35,793 - __main__ - INFO - Sending frame, size: 7029 bytes
+2025-05-08 14:22:35,840 - __main__ - INFO - Sending frame, size: 7025 bytes
+2025-05-08 14:22:35,873 - __main__ - INFO - Sending frame, size: 7042 bytes
+2025-05-08 14:22:35,919 - __main__ - INFO - Sending frame, size: 7046 bytes
+2025-05-08 14:22:35,964 - __main__ - INFO - Sending frame, size: 7048 bytes
+2025-05-08 14:22:35,999 - __main__ - INFO - Sending frame, size: 7045 bytes
+2025-05-08 14:22:36,040 - __main__ - INFO - Sending frame, size: 7031 bytes
+2025-05-08 14:22:36,087 - __main__ - INFO - Sending frame, size: 7038 bytes
+2025-05-08 14:22:36,125 - __main__ - INFO - Sending frame, size: 7007 bytes
+2025-05-08 14:22:36,164 - __main__ - INFO - Sending frame, size: 6972 bytes
+2025-05-08 14:22:36,210 - __main__ - INFO - Sending frame, size: 6946 bytes
+2025-05-08 14:22:36,255 - __main__ - INFO - Sending frame, size: 6882 bytes
+2025-05-08 14:22:36,292 - __main__ - INFO - Sending frame, size: 6883 bytes
+2025-05-08 14:22:36,333 - __main__ - INFO - Sending frame, size: 6834 bytes
+2025-05-08 14:22:36,385 - __main__ - INFO - Sending frame, size: 6861 bytes
+2025-05-08 14:22:36,420 - __main__ - INFO - Sending frame, size: 6824 bytes
+2025-05-08 14:22:36,459 - __main__ - INFO - Sending frame, size: 6873 bytes
+2025-05-08 14:22:36,505 - __main__ - INFO - Sending frame, size: 6949 bytes
+2025-05-08 14:22:36,540 - __main__ - INFO - Sending frame, size: 6949 bytes
+2025-05-08 14:22:36,584 - __main__ - INFO - Sending frame, size: 6904 bytes
+2025-05-08 14:22:36,634 - __main__ - INFO - Sending frame, size: 6871 bytes
+2025-05-08 14:22:36,669 - __main__ - INFO - Sending frame, size: 6818 bytes
+2025-05-08 14:22:36,708 - __main__ - INFO - Sending frame, size: 6822 bytes
+2025-05-08 14:22:36,754 - __main__ - INFO - Sending frame, size: 6850 bytes
+2025-05-08 14:22:36,789 - __main__ - INFO - Sending frame, size: 6832 bytes
+2025-05-08 14:22:36,831 - __main__ - INFO - Sending frame, size: 6846 bytes
+2025-05-08 14:22:36,882 - __main__ - INFO - Sending frame, size: 6863 bytes
+2025-05-08 14:22:36,916 - __main__ - INFO - Sending frame, size: 6878 bytes
+2025-05-08 14:22:36,956 - __main__ - INFO - Sending frame, size: 6873 bytes
+2025-05-08 14:22:37,002 - __main__ - INFO - Sending frame, size: 6924 bytes
+2025-05-08 14:22:37,048 - __main__ - INFO - Sending frame, size: 6972 bytes
+2025-05-08 14:22:37,083 - __main__ - INFO - Sending frame, size: 6968 bytes
+2025-05-08 14:22:37,131 - __main__ - INFO - Sending frame, size: 6999 bytes
+2025-05-08 14:22:37,172 - __main__ - INFO - Sending frame, size: 7015 bytes
+2025-05-08 14:22:37,207 - __main__ - INFO - Sending frame, size: 7015 bytes
+2025-05-08 14:22:37,251 - __main__ - INFO - Sending frame, size: 7022 bytes
+2025-05-08 14:22:37,296 - __main__ - INFO - Sending frame, size: 7089 bytes
+2025-05-08 14:22:37,330 - __main__ - INFO - Sending frame, size: 7089 bytes
+2025-05-08 14:22:37,380 - __main__ - INFO - Sending frame, size: 7138 bytes
+2025-05-08 14:22:37,423 - __main__ - INFO - Sending frame, size: 7155 bytes
+2025-05-08 14:22:37,459 - __main__ - INFO - Sending frame, size: 7162 bytes
+2025-05-08 14:22:37,500 - __main__ - INFO - Sending frame, size: 7227 bytes
+2025-05-08 14:22:37,547 - __main__ - INFO - Sending frame, size: 7246 bytes
+2025-05-08 14:22:37,583 - __main__ - INFO - Sending frame, size: 7238 bytes
+2025-05-08 14:22:37,628 - __main__ - INFO - Sending frame, size: 7264 bytes
+2025-05-08 14:22:37,672 - __main__ - INFO - Sending frame, size: 7232 bytes
+2025-05-08 14:22:37,707 - __main__ - INFO - Sending frame, size: 7242 bytes
+2025-05-08 14:22:37,750 - __main__ - INFO - Sending frame, size: 7237 bytes
+2025-05-08 14:22:37,798 - __main__ - INFO - Sending frame, size: 7269 bytes
+2025-05-08 14:22:37,833 - __main__ - INFO - Sending frame, size: 7258 bytes
+2025-05-08 14:22:37,877 - __main__ - INFO - Sending frame, size: 7267 bytes
+2025-05-08 14:22:37,920 - __main__ - INFO - Sending frame, size: 7236 bytes
+2025-05-08 14:22:37,965 - __main__ - INFO - Sending frame, size: 7244 bytes
+2025-05-08 14:22:37,999 - __main__ - INFO - Sending frame, size: 7254 bytes
+2025-05-08 14:22:38,043 - __main__ - INFO - Sending frame, size: 7244 bytes
+2025-05-08 14:22:38,088 - __main__ - INFO - Sending frame, size: 7218 bytes
+2025-05-08 14:22:38,125 - __main__ - INFO - Sending frame, size: 7249 bytes
+2025-05-08 14:22:38,166 - __main__ - INFO - Sending frame, size: 7232 bytes
+2025-05-08 14:22:38,212 - __main__ - INFO - Sending frame, size: 7232 bytes
+2025-05-08 14:22:38,246 - __main__ - INFO - Sending frame, size: 7209 bytes
+2025-05-08 14:22:38,291 - __main__ - INFO - Sending frame, size: 7200 bytes
+2025-05-08 14:22:38,337 - __main__ - INFO - Sending frame, size: 7209 bytes
+2025-05-08 14:22:38,357 - __main__ - INFO - Camera released
+2025-05-08 14:22:51,293 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:22:51] "HEAD /video_feed?action=checkin&nocache=1746688971284 HTTP/1.1" 200 -
+2025-05-08 14:22:51,303 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:22:51,489 - __main__ - INFO - Sending frame, size: 6158 bytes
+2025-05-08 14:22:51,499 - __main__ - INFO - Camera released
+2025-05-08 14:22:51,499 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:22:51,500 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:22:51] "[32mPOST /checkin HTTP/1.1[0m" 302 -
+2025-05-08 14:22:51,510 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:22:51] "GET /index HTTP/1.1" 200 -
+2025-05-08 14:22:51,678 - __main__ - INFO - Sending frame, size: 6149 bytes
+2025-05-08 14:22:51,678 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:22:51] "GET /video_feed?action=checkin&nocache=1746688971297 HTTP/1.1" 200 -
+2025-05-08 14:22:51,893 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-05-08 14:22:51,896 - telegram.bot - DEBUG - Entering: send_message
+2025-05-08 14:22:58,147 - werkzeug - INFO -  * Detected change in 'C:\\Users\\ADMIN\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\werkzeug\\wsgi.py', reloading
+2025-05-08 14:22:58,173 - werkzeug - INFO -  * Detected change in 'C:\\Users\\ADMIN\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\werkzeug\\debug\\__init__.py', reloading
+2025-05-08 14:22:58,215 - __main__ - INFO - Logged attendance: A, checkin
+2025-05-08 14:22:58,217 - __main__ - INFO - Sending frame, size: 6301 bytes
+2025-05-08 14:22:58,296 - __main__ - INFO - Camera released
+2025-05-08 14:22:59,449 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-05-08 14:23:02,218 - __main__ - INFO - Face detection and recognition models loaded successfully
+2025-05-08 14:23:02,479 - __main__ - INFO - Added face target: A
+2025-05-08 14:23:02,729 - __main__ - INFO - Added face target: Nguyen_Duy_KHanh
+2025-05-08 14:23:02,729 - __main__ - INFO - Built 2 face targets in total
+2025-05-08 14:23:02,747 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 14:23:02,760 - werkzeug - INFO -  * Debugger PIN: 572-279-450
+2025-05-08 14:23:13,099 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:23:13] "HEAD /video_feed?action=checkout&nocache=1746688993090 HTTP/1.1" 200 -
+2025-05-08 14:23:13,110 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:23:13,576 - __main__ - INFO - Sending frame, size: 6244 bytes
+2025-05-08 14:23:13,583 - __main__ - INFO - Camera released
+2025-05-08 14:23:13,583 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:23:13,585 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:23:13] "[32mPOST /checkout HTTP/1.1[0m" 302 -
+2025-05-08 14:23:13,598 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:23:13] "GET /index HTTP/1.1" 200 -
+2025-05-08 14:23:13,794 - __main__ - INFO - Sending frame, size: 6241 bytes
+2025-05-08 14:23:13,795 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:23:13] "GET /video_feed?action=checkout&nocache=1746688993104 HTTP/1.1" 200 -
+2025-05-08 14:23:14,006 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-05-08 14:23:14,007 - telegram.bot - DEBUG - Entering: send_message
+2025-05-08 14:23:20,017 - telegram.bot - DEBUG - {'chat': {'first_name': 'Bo', 'id': 6262392731, 'username': 'Dobotri', 'type': 'private'}, 'new_chat_members': [], 'group_chat_created': False, 'date': 1746689011, 'photo': [], 'entities': [], 'channel_chat_created': False, 'delete_chat_photo': False, 'supergroup_chat_created': False, 'text': 'New record:\nTime: 2025-05-08 14:23:14\nName: A\nCheck-out: 2025-05-08 14:23:14', 'new_chat_photo': [], 'message_id': 32, 'caption_entities': [], 'from': {'first_name': 'Tridobot', 'username': 'waming_bot', 'id': 7941539579, 'is_bot': True}}
+2025-05-08 14:23:20,018 - telegram.bot - DEBUG - Exiting: send_message
+2025-05-08 14:23:20,046 - __main__ - INFO - Logged attendance: A, checkout
+2025-05-08 14:23:20,049 - __main__ - INFO - Sending frame, size: 6444 bytes
+2025-05-08 14:23:20,074 - __main__ - INFO - Camera released
+2025-05-08 14:23:28,295 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:23:28] "HEAD /video_feed?action=checkin&nocache=1746689008287 HTTP/1.1" 200 -
+2025-05-08 14:23:28,306 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:23:28,558 - __main__ - INFO - Sending frame, size: 6153 bytes
+2025-05-08 14:23:28,566 - __main__ - INFO - Camera released
+2025-05-08 14:23:28,566 - __main__ - INFO - Starting generate_frames
+2025-05-08 14:23:28,566 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:23:28] "[32mPOST /checkin HTTP/1.1[0m" 302 -
+2025-05-08 14:23:28,582 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:23:28] "GET /index HTTP/1.1" 200 -
+2025-05-08 14:23:28,756 - __main__ - INFO - Sending frame, size: 6199 bytes
+2025-05-08 14:23:28,757 - werkzeug - INFO - 127.0.0.1 - - [08/May/2025 14:23:28] "GET /video_feed?action=checkin&nocache=1746689008299 HTTP/1.1" 200 -
+2025-05-08 14:23:28,964 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-05-08 14:23:28,965 - telegram.bot - DEBUG - Entering: send_message
+2025-05-08 14:23:35,003 - telegram.bot - DEBUG - {'chat': {'first_name': 'Bo', 'id': 6262392731, 'username': 'Dobotri', 'type': 'private'}, 'new_chat_members': [], 'group_chat_created': False, 'date': 1746689026, 'photo': [], 'entities': [], 'channel_chat_created': False, 'delete_chat_photo': False, 'supergroup_chat_created': False, 'text': 'New record:\nTime: 2025-05-08 14:23:28\nName: A\nCheck-in: 2025-05-08 14:23:28', 'new_chat_photo': [], 'message_id': 33, 'caption_entities': [], 'from': {'first_name': 'Tridobot', 'username': 'waming_bot', 'id': 7941539579, 'is_bot': True}}
+2025-05-08 14:23:35,004 - telegram.bot - DEBUG - Exiting: send_message
+2025-05-08 14:23:35,020 - __main__ - INFO - Logged attendance: A, checkin
+2025-05-08 14:23:35,021 - __main__ - INFO - Sending frame, size: 6541 bytes
+2025-05-08 14:23:35,046 - __main__ - INFO - Camera released

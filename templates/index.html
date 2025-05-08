@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chấm Công Nhận Diện Khuôn Mặt</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+      .toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        max-width: 300px;
+      }
+      .toast {
+        background-color: #333;
+        color: white;
+        padding: 12px 20px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        font-size: 0.9rem;
+        word-wrap: break-word;
+      }
+      .toast.show {
+        opacity: 1;
+      }
+      .toast.success {
+        background-color: #28a745;
+      }
+      .toast.error {
+        background-color: #dc3545;
+      }
+      .video-container {
+        margin: 20px auto;
+        background-color: #000;
+        width: 100%;
+        max-width: 640px;
+        aspect-ratio: 4 / 3;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .video-frame {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        display: none;
+        z-index: 1;
+      }
+      .video-frame.active {
+        display: block !important;
+      }
+      .placeholder {
+        color: #fff;
+        font-size: 1rem;
+        display: block;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 0;
+      }
+      .loading {
+        color: #fff;
+        font-size: 1rem;
+        display: none;
+        position: absolute;
+        z-index: 0;
+      }
+      .countdown {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        display: none;
+      }
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        background-color: #4caf50;
+        color: white;
+        flex: 1;
+        max-width: 150px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      button.check-out {
+        background-color: #f44336;
+      }
+      button.check-out:hover {
+        background-color: #da190b;
+      }
+      button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      .logout {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ccc;
+        color: #333;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 1rem;
+      }
+      .logout:hover {
+        background-color: #bbb;
+      }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+        .video-container {
+          max-width: 100%;
+        }
+        button {
+          padding: 8px 15px;
+          font-size: 0.9rem;
+          max-width: 120px;
+        }
+        .toast-container {
+          max-width: 90%;
+          right: 10px;
+          top: 10px;
+        }
+        .toast {
+          font-size: 0.8rem;
+          padding: 10px 15px;
+        }
+        .placeholder,
+        .loading {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Chấm Công Nhận Diện Khuôn Mặt</h1>
+      <div class="toast-container" id="toast-container"></div>
+      <div class="video-container" id="video-container">
+        <img id="video-feed" class="video-frame" alt="Video Feed" />
+        <span id="placeholder" class="placeholder">Camera đang tắt</span>
+        <span id="loading" class="loading">Đang tải camera...</span>
+        <div id="countdown" class="countdown">3</div>
+      </div>
+      <div class="buttons">
+        <button type="button" id="checkin-btn">Ghi Vào</button>
+        <button type="button" id="checkout-btn" class="check-out">
+          Ghi Ra
+        </button>
+      </div>
+      <a href="{{ url_for('logout') }}" class="logout">Đăng xuất</a>
+    </div>
+    <script>
+      let isProcessing = false;
+      let countdownTimer = null;
+      let cameraTimeout = null;
+
+      function showToast(message, type = "success") {
+        const toastContainer = document.getElementById("toast-container");
+        const toast = document.createElement("div");
+        toast.className = `toast ${type}`;
+        toast.textContent = message;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+          toast.classList.add("show");
+          setTimeout(() => {
+            toast.classList.remove("show");
+            setTimeout(() => {
+              toast.remove();
+            }, 500);
+          }, 3000);
+        }, 100);
+      }
+
+      async function checkCameraPermission() {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: true,
+          });
+          console.log("Webcam permission granted");
+          stream.getTracks().forEach((track) => track.stop());
+          return true;
+        } catch (error) {
+          console.error("Camera permission error:", error);
+          showToast(
+            "Không thể truy cập webcam. Vui lòng cấp quyền hoặc kiểm tra thiết bị.",
+            "error"
+          );
+          return false;
+        }
+      }
+
+      async function checkVideoFeedEndpoint(action) {
+        try {
+          const response = await fetch(
+            `/video_feed?action=${action}&nocache=${new Date().getTime()}`,
+            { method: "HEAD" }
+          );
+          if (!response.ok) {
+            throw new Error(`Video feed endpoint failed: ${response.status}`);
+          }
+          console.log("Video feed endpoint is accessible");
+          return true;
+        } catch (error) {
+          console.error("Video feed endpoint error:", error);
+          showToast(
+            "Không thể kết nối đến luồng video. Vui lòng thử lại.",
+            "error"
+          );
+          return false;
+        }
+      }
+
+      function handleVideoLoad() {
+        console.log("Video stream loaded successfully");
+        const videoFeed = document.getElementById("video-feed");
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("placeholder").style.display = "none";
+        videoFeed.classList.add("active");
+
+        const countdownElement = document.getElementById("countdown");
+        countdownElement.style.display = "block";
+        let secondsLeft = 3;
+        countdownElement.textContent = secondsLeft;
+
+        if (countdownTimer) clearInterval(countdownTimer);
+        countdownTimer = setInterval(() => {
+          secondsLeft--;
+          countdownElement.textContent = secondsLeft;
+          if (secondsLeft <= 0) {
+            clearInterval(countdownTimer);
+            countdownElement.style.display = "none";
+          }
+        }, 1000);
+      }
+
+      function resetInterface() {
+        const videoFeed = document.getElementById("video-feed");
+        const placeholder = document.getElementById("placeholder");
+        const loading = document.getElementById("loading");
+        const countdown = document.getElementById("countdown");
+        const checkinBtn = document.getElementById("checkin-btn");
+        const checkoutBtn = document.getElementById("checkout-btn");
+
+        if (countdownTimer) clearInterval(countdownTimer);
+        if (cameraTimeout) clearTimeout(cameraTimeout);
+
+        videoFeed.src = "";
+        videoFeed.classList.remove("active");
+        placeholder.style.display = "block";
+        loading.style.display = "none";
+        countdown.style.display = "none";
+        checkinBtn.disabled = false;
+        checkoutBtn.disabled = false;
+        isProcessing = false;
+      }
+
+      function displayFlashMessages() {
+        const flashMessages = document.querySelectorAll(".flash-message");
+        if (flashMessages.length > 0) {
+          flashMessages.forEach((message) => {
+            const type = message.classList.contains("flash-success")
+              ? "success"
+              : "error";
+            showToast(message.textContent.trim(), type);
+            message.remove();
+          });
+        }
+      }
+
+      document
+        .getElementById("checkin-btn")
+        .addEventListener("click", () => handleAttendance("checkin"));
+      document
+        .getElementById("checkout-btn")
+        .addEventListener("click", () => handleAttendance("checkout"));
+
+      async function handleAttendance(action) {
+        if (isProcessing) {
+          console.log("Processing in progress, ignoring click");
+          return;
+        }
+        isProcessing = true;
+
+        const videoFeed = document.getElementById("video-feed");
+        const placeholder = document.getElementById("placeholder");
+        const loading = document.getElementById("loading");
+        const checkinBtn = document.getElementById("checkin-btn");
+        const checkoutBtn = document.getElementById("checkout-btn");
+
+        try {
+          const hasCameraPermission = await checkCameraPermission();
+          if (!hasCameraPermission) {
+            isProcessing = false;
+            return;
+          }
+
+          if (!(await checkVideoFeedEndpoint(action))) {
+            resetInterface();
+            return;
+          }
+
+          checkinBtn.disabled = true;
+          checkoutBtn.disabled = true;
+          placeholder.style.display = "none";
+          loading.style.display = "block";
+
+          if (cameraTimeout) clearTimeout(cameraTimeout);
+          cameraTimeout = setTimeout(() => {
+            showToast(
+              "Quá thời gian kết nối với camera. Vui lòng thử lại.",
+              "error"
+            );
+            resetInterface();
+          }, 15000);
+
+          loadCamera(action);
+
+          videoFeed.onload = () => handleVideoLoad();
+
+          const CAMERA_DISPLAY_TIME = 5000;
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 20000);
+
+          const response = await fetch(`/${action}`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            signal: controller.signal,
+          });
+
+          clearTimeout(timeoutId);
+
+          if (!response.ok) {
+            throw new Error(`POST request failed: ${response.status}`);
+          }
+
+          const html = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+          const flashMessages = doc.querySelectorAll(".flash-message");
+
+          if (flashMessages.length > 0) {
+            const container = document.querySelector(".container");
+            const videoContainer = document.getElementById("video-container");
+
+            document
+              .querySelectorAll(".flash-message")
+              .forEach((el) => el.remove());
+
+            flashMessages.forEach((message) => {
+              container.insertBefore(message.cloneNode(true), videoContainer);
+            });
+
+            displayFlashMessages();
+          }
+
+          if (cameraTimeout) clearTimeout(cameraTimeout);
+
+          setTimeout(() => {
+            resetInterface();
+          }, CAMERA_DISPLAY_TIME);
+        } catch (error) {
+          if (cameraTimeout) clearTimeout(cameraTimeout);
+
+          console.error("Error:", error);
+          if (error.name === "AbortError") {
+            showToast("Yêu cầu quá thời gian. Vui lòng thử lại.", "error");
+          } else {
+            showToast(`Lỗi: ${error.message}`, "error");
+          }
+          resetInterface();
+        }
+      }
+
+      function loadCamera(action) {
+        console.log(`Loading camera for action: ${action}`);
+        const videoFeed = document.getElementById("video-feed");
+        document.getElementById("loading").style.display = "block";
+        document.getElementById("placeholder").style.display = "none";
+        videoFeed.src = "";
+        videoFeed.src = `/video_feed?action=${action}&nocache=${new Date().getTime()}`;
+        console.log(`Video feed URL: ${videoFeed.src}`);
+      }
+
+      window.addEventListener("load", () => {
+        displayFlashMessages();
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'93c717673f4944ef',t:'MTc0NjY4Nzc0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
