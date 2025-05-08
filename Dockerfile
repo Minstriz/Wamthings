@@ -1,4 +1,3 @@
-
 # Sử dụng image Python chính thức làm base
 FROM python:3.9-slim
 
@@ -6,13 +5,13 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Sao chép các file cần thiết vào container
-COPY app_final.py .
-COPY requirements.txt .
-COPY templates/ templates/
-COPY static/ static/
-COPY faces/ faces/
-COPY weights/ weights/
-COPY report_excel.py .
+COPY app_final.py /app/app_final.py
+COPY requirements.txt /app/requirements.txt
+COPY templates/ /app/templates/
+COPY static/ /app/static/
+COPY faces/ /app/faces/
+COPY weights/ /app/weights/
+COPY report_excel.py /app/report_excel.py
 
 # Cài đặt các gói hệ thống cần thiết
 RUN apt-get update && apt-get install -y \
@@ -27,7 +26,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Thiết lập biến môi trường cho Flask
-ENV FLASK_APP=app_final.py
+ENV FLASK_APP=app_final
 ENV FLASK_ENV=production
 
 # Lệnh để chạy ứng dụng
