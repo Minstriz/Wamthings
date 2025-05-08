@@ -12,6 +12,10 @@ COPY static/ /app/static/
 COPY faces/ /app/faces/
 COPY weights/ /app/weights/
 COPY report_excel.py /app/report_excel.py
+COPY models/ /app/models/ 
+COPY utils/ /app/utils/ 
+# Kiểm tra sự tồn tại của app_final.py
+RUN ls -l /app/app_final.py || (echo "Error: app_final.py not found" && exit 1)
 
 # Cài đặt các gói hệ thống cần thiết
 RUN apt-get update && apt-get install -y \
@@ -21,6 +25,12 @@ RUN apt-get update && apt-get install -y \
 
 # Cài đặt các thư viện Python từ requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Kiểm tra xem các thư viện cần thiết đã được cài đặt
+RUN pip show gunicorn || (echo "Error: gunicorn not installed" && exit 1)
+RUN pip show eventlet || (echo "Error: eventlet not installed" && exit 1)
+RUN pip show requests || (echo "Error: requests not installed" && exit 1)
+RUN pip show urllib3 || (echo "Error: urllib3 not installed" && exit 1)
 
 # Mở cổng 5000 để Railway truy cập
 EXPOSE 5000
