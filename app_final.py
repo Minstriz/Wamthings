@@ -399,6 +399,36 @@ def login_required(role):
         return decorated_function
     return decorator
 
+@app.route('/checkin', methods=['POST'])
+@login_required('user')
+def checkin():
+    action = 'checkin'
+    user_agent = request.headers.get('User-Agent', '').lower()
+    
+    for _, result in generate_frames(action, user_agent):
+        success, name_detected, message = result
+        if success:
+            flash(message, "success")
+        elif message:
+            flash(message, "error")
+        break
+    return redirect(url_for('index'))
+
+@app.route('/checkout', methods=['POST'])
+@login_required('user')
+def checkout():
+    action = 'checkout'
+    user_agent = request.headers.get('User-Agent', '').lower()
+    
+    for _, result in generate_frames(action, user_agent):
+        success, name_detected, message = result
+        if success:
+            flash(message, "success")
+        elif message:
+            flash(message, "error")
+        break
+    return redirect(url_for('index'))
+
 @app.route('/')
 def home():
     return redirect(url_for('login'))
@@ -524,40 +554,6 @@ def video_feed():
             yield frame
     
     return Response(stream(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
-@app.route('/checkin', methods=['POST'])
-@login_required('user')
-def checkin():
-    action = 'checkin'
-    user_agent = request.headers.get('User-Agent', '').lower()
-    
-    for _, result in generate_frames(action, user_agent):
-        success, name_detected, message = result
-        if success:
-            flash(message, "success")
-        elif message:
-            flash(message, "error")
-        break
-    else:
-        flash("Không có kết quả từ quá trình nhận diện", "error")
-    return redirect(url_for('index'))
-
-@app.route('/checkout', methods=['POST'])
-@login_required('user')
-def checkout():
-    action = 'checkout'
-    user_agent = request.headers.get('User-Agent', '').lower()
-    
-    for _, result in generate_frames(action, user_agent):
-        success, name_detected, message = result
-        if success:
-            flash(message, "success")
-        elif message:
-            flash(message, "error")
-        break
-    else:
-        flash("Không có kết quả từ quá trình nhận diện", "error")
-    return redirect(url_for('index'))
 
 @socketio.on('connect', namespace='/admin')
 def handle_connect():

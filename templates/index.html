@@ -301,19 +301,6 @@
         isProcessing = false;
       }
 
-      function displayFlashMessages() {
-        const flashMessages = document.querySelectorAll(".flash-message");
-        if (flashMessages.length > 0) {
-          flashMessages.forEach((message) => {
-            const type = message.classList.contains("flash-success")
-              ? "success"
-              : "error";
-            showToast(message.textContent.trim(), type);
-            message.remove();
-          });
-        }
-      }
-
       document
         .getElementById("checkin-btn")
         .addEventListener("click", () => handleAttendance("checkin"));
@@ -388,18 +375,12 @@
           const flashMessages = doc.querySelectorAll(".flash-message");
 
           if (flashMessages.length > 0) {
-            const container = document.querySelector(".container");
-            const videoContainer = document.getElementById("video-container");
-
-            document
-              .querySelectorAll(".flash-message")
-              .forEach((el) => el.remove());
-
             flashMessages.forEach((message) => {
-              container.insertBefore(message.cloneNode(true), videoContainer);
+              const type = message.classList.contains("flash-success")
+                ? "success"
+                : "error";
+              showToast(message.textContent.trim(), type);
             });
-
-            displayFlashMessages();
           }
 
           if (cameraTimeout) clearTimeout(cameraTimeout);
@@ -431,7 +412,16 @@
       }
 
       window.addEventListener("load", () => {
-        displayFlashMessages();
+        const flashMessages = document.querySelectorAll(".flash-message");
+        if (flashMessages.length > 0) {
+          flashMessages.forEach((message) => {
+            const type = message.classList.contains("flash-success")
+              ? "success"
+              : "error";
+            showToast(message.textContent.trim(), type);
+            message.remove();
+          });
+        }
       });
     </script>
     <script>
